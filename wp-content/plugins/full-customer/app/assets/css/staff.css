@@ -1,0 +1,102 @@
+#full-staff-modal {
+  width: min(640px, 90%);
+  border: unset;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+
+  .fsm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: solid 1px rgb(191 191 191);
+
+    * {
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+    }
+
+    button {
+      color: red;
+      background: unset;
+      border: unset;
+      font-size: 2em;
+      cursor: pointer;
+      min-height: unset;
+      height: unset;
+    }
+  }
+
+  .fsm-body {
+    padding: 15px 0 0;
+
+    .fsm-repository {
+      margin-bottom: 15px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+
+      input {
+        display: none;
+      }
+
+      label {
+        border: 1px solid #d9d9d9;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 150ms;
+
+        aspect-ratio: 21/9;
+        display: grid;
+        place-items: center;
+        line-height: 1.2;
+
+        &:hover {
+          border-color: #ebbd32;
+        }
+      }
+
+      input:checked + label {
+        border-color: #ebbd32;
+        background: #ebbd32;
+        color: #fff;
+        box-shadow: 0 0 0 1px #ebbd32;
+      }
+    }
+
+    .full-primary-button {
+      display: inline-block;
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 0.0625rem solid transparent;
+      padding: 0.54688rem 0.875rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      border-radius: 0.3125rem;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      text-decoration: none;
+      background-color: #05ab2e;
+
+      &.response {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+
+    .fsm-response:not(:empty) {
+      padding: 20px;
+      background: #ededed;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+  }
+}

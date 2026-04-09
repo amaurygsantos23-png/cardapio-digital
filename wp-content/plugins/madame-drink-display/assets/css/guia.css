@@ -1,0 +1,118 @@
+/* ================================================================
+   Drink Display – Guia de Implementação
+   Matching Mesa Pro guide design
+   ================================================================ */
+
+/* TOC */
+.mdd-guia-toc{
+    background:var(--mdd-surface);border:1px solid var(--mdd-border);
+    border-radius:var(--mdd-radius);padding:24px 28px;margin-bottom:32px;
+}
+.mdd-guia-toc h3{
+    font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;
+    color:var(--mdd-muted);text-transform:uppercase;letter-spacing:.08em;margin:0 0 14px;
+}
+.mdd-guia-toc-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px;
+}
+.mdd-guia-toc-grid a{
+    color:var(--mdd-text)!important;text-decoration:none!important;font-size:.88rem;
+    display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;transition:background .2s;
+}
+.mdd-guia-toc-grid a:hover{background:rgba(255,255,255,.04)}
+.mdd-toc-n{
+    width:26px;height:26px;background:#222;border-radius:6px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:.75rem;font-weight:700;color:var(--mdd-accent);flex-shrink:0;
+}
+
+/* Steps (accordion) */
+.mdd-guia-step{
+    background:var(--mdd-surface);border:1px solid var(--mdd-border);
+    border-radius:var(--mdd-radius);margin-bottom:16px;overflow:hidden;
+    transition:border-color .2s;
+}
+.mdd-guia-step:hover{border-color:#3a3a3a}
+.mdd-guia-step summary{
+    display:flex;align-items:flex-start;gap:14px;padding:22px 26px;
+    cursor:pointer;user-select:none;list-style:none;
+}
+.mdd-guia-step summary::-webkit-details-marker{display:none}
+.mdd-step-n{
+    width:38px;height:38px;background:var(--mdd-accent);color:#fff;
+    border-radius:10px;display:flex;align-items:center;justify-content:center;
+    font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;flex-shrink:0;
+}
+.mdd-guia-step summary div{flex:1}
+.mdd-guia-step summary strong{
+    font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;display:block;color:var(--mdd-text);
+}
+.mdd-guia-step summary span:not(.mdd-step-n):not(.mdd-arrow){
+    font-size:.82rem;color:var(--mdd-muted);display:block;margin-top:2px;
+}
+.mdd-arrow{
+    margin-left:auto;color:var(--mdd-muted);font-size:1.1rem;padding-top:8px;
+    transition:transform .2s;flex-shrink:0;display:inline!important;
+}
+.mdd-guia-step[open] .mdd-arrow{transform:rotate(90deg)}
+
+.mdd-step-body{padding:0 26px 26px}
+.mdd-step-body p{font-size:.9rem;margin:0 0 12px;line-height:1.6;color:var(--mdd-text)}
+.mdd-step-body small{font-size:.8rem;color:var(--mdd-muted)}
+
+/* Checklist */
+.mdd-check-list{margin:12px 0 16px}
+.mdd-check-list label{
+    display:flex;align-items:flex-start;gap:10px;padding:8px 0;
+    font-size:.9rem;border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer;color:var(--mdd-text);
+}
+.mdd-check-list label:last-child{border-bottom:none}
+.mdd-check-list input[type=checkbox]{
+    width:18px;height:18px;accent-color:var(--mdd-accent);
+    flex-shrink:0;margin-top:2px;cursor:pointer;
+}
+.mdd-check-list label strong{color:var(--mdd-text)}
+.mdd-check-list label small{font-size:.78rem;color:var(--mdd-muted)}
+
+/* Info boxes */
+.mdd-info-box{
+    background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.2);
+    border-radius:10px;padding:14px 18px;margin:14px 0;font-size:.88rem;line-height:1.5;
+    color:var(--mdd-text);
+}
+.mdd-info-box.success{background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.2)}
+.mdd-info-box.warning{background:rgba(255,173,0,.06);border-color:rgba(255,173,0,.2)}
+.mdd-info-box.danger{background:rgba(224,60,60,.06);border-color:rgba(224,60,60,.2)}
+.mdd-info-box strong{color:var(--mdd-text)}
+
+/* Code block */
+.mdd-code-block{
+    background:#111;border:1px solid var(--mdd-border);border-radius:10px;
+    padding:14px 18px;font-family:'Courier New',monospace;font-size:.85rem;
+    color:var(--mdd-accent2);margin:12px 0 8px;cursor:pointer;position:relative;
+    transition:border-color .2s;white-space:pre-wrap;word-break:break-all;line-height:1.6;
+}
+.mdd-code-block:hover{border-color:var(--mdd-accent)}
+.copy-hint{
+    position:absolute;top:8px;right:12px;font-family:'DM Sans',sans-serif;
+    font-size:.7rem;color:var(--mdd-muted);background:#1a1a1a;
+    padding:2px 8px;border-radius:4px;
+}
+
+/* Table inside guide */
+.mdd-step-body table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--mdd-border);border-radius:10px;overflow:hidden;margin:12px 0}
+.mdd-step-body th{background:#111;color:var(--mdd-muted);font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;padding:10px 14px;text-align:left;border-bottom:1px solid var(--mdd-border)}
+.mdd-step-body td{background:var(--mdd-surface);color:var(--mdd-text);padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.03);font-size:.85rem}
+.mdd-step-body tr:last-child td{border-bottom:none}
+
+/* FAQ */
+.mdd-faq{display:flex;flex-direction:column;gap:12px}
+.mdd-faq-item{background:#111;border:1px solid var(--mdd-border);border-radius:10px;padding:16px 18px}
+.mdd-faq-item strong{font-size:.9rem;display:block;margin-bottom:6px;color:var(--mdd-text)}
+.mdd-faq-item p{font-size:.85rem;color:var(--mdd-muted);margin:0;line-height:1.5}
+
+/* Footer */
+.mdd-guia-footer{
+    margin-top:40px;text-align:center;font-size:.73rem;color:#444;
+    border-top:1px solid var(--mdd-border);padding-top:22px;
+}

@@ -1,0 +1,228 @@
+/* ================================================================
+   Drink Display – Admin Dark Theme
+   Design system: Mesa Pro compatible
+   Author: Amaury Santos · a3tecnologias.com
+   ================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+    --mdd-bg:#0f0f0f;--mdd-surface:#1a1a1a;--mdd-border:#2a2a2a;
+    --mdd-accent:#f97316;--mdd-accent2:#ffad00;--mdd-text:#f0ece4;
+    --mdd-muted:#888;--mdd-success:#22c55e;--mdd-danger:#e03c3c;--mdd-radius:14px;
+}
+
+/* Force dark on WordPress admin shell */
+#mdd-wrap *,#mdd-wrap *::before,#mdd-wrap *::after{box-sizing:border-box}
+#wpcontent,#wpbody-content{background:var(--mdd-bg)!important}
+
+/* ─── Main Wrapper ─── */
+#mdd-wrap{
+    font-family:'DM Sans',system-ui,sans-serif;
+    color:var(--mdd-text);background:var(--mdd-bg);
+    min-height:100vh;padding:32px 24px 80px;margin-left:-20px;margin-top:-10px;
+    max-width:1120px;
+}
+
+/* ─── Title ─── */
+.mdd-title{
+    font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;
+    letter-spacing:-.03em;display:flex;align-items:center;gap:12px;margin-bottom:32px;
+    color:var(--mdd-text);
+}
+.mdd-title .dashicons{
+    display:inline-flex;width:44px;height:44px;background:var(--mdd-accent);
+    color:#fff;border-radius:10px;align-items:center;justify-content:center;font-size:1.3rem;
+}
+
+/* ─── Tabs ─── */
+.mdd-tabs{display:flex;gap:0;border-bottom:1px solid var(--mdd-border);margin-bottom:28px;flex-wrap:wrap}
+.mdd-tab{
+    display:flex;align-items:center;gap:6px;padding:12px 16px;text-decoration:none!important;
+    color:var(--mdd-muted)!important;font-weight:500;font-size:.85rem;
+    border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s;
+}
+.mdd-tab:hover{color:var(--mdd-text)!important;background:rgba(255,255,255,.02)}
+.mdd-tab:focus{color:var(--mdd-text)!important;box-shadow:none!important;outline:none!important}
+.mdd-tab.active{color:var(--mdd-accent)!important;border-bottom-color:var(--mdd-accent)}
+.mdd-tab .dashicons{font-size:16px;width:16px;height:16px}
+
+/* ─── Cards ─── */
+.mdd-card{
+    background:var(--mdd-surface);border:1px solid var(--mdd-border);
+    border-radius:var(--mdd-radius);padding:28px 32px;margin-bottom:20px;
+}
+.mdd-card h2{
+    font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;
+    margin:0 0 20px!important;padding-bottom:12px;border-bottom:1px solid var(--mdd-border);
+    color:var(--mdd-text)!important;
+}
+.mdd-card h3{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;margin:18px 0 8px;color:var(--mdd-text)!important}
+#mdd-wrap p.description,#mdd-wrap .description{color:var(--mdd-muted)!important;font-size:.82rem}
+.mdd-info-card{background:rgba(249,115,22,.04)!important;border-color:rgba(249,115,22,.15)!important}
+.mdd-info-card ol{margin:8px 0 0 20px;color:var(--mdd-muted)}
+
+/* ─── Form Elements ─── */
+.mdd-field{margin-bottom:18px}
+.mdd-field>label,#mdd-wrap label{color:var(--mdd-text)!important}
+.mdd-field>label{display:block;font-size:.75rem!important;font-weight:500!important;text-transform:uppercase;letter-spacing:.08em;color:var(--mdd-muted)!important;margin-bottom:6px}
+.mdd-field .description{color:var(--mdd-muted)!important;font-size:.73rem!important;margin-top:4px}
+
+#mdd-wrap select,
+#mdd-wrap input[type="text"],
+#mdd-wrap input[type="url"],
+#mdd-wrap input[type="number"],
+#mdd-wrap input[type="email"],
+#mdd-wrap input[type="password"],
+#mdd-wrap textarea{
+    background:#111!important;border:1px solid var(--mdd-border)!important;border-radius:8px!important;
+    color:var(--mdd-text)!important;padding:9px 13px!important;font-family:inherit!important;font-size:.9rem!important;
+    outline:none!important;width:100%;transition:border-color .2s;box-shadow:none!important;
+}
+#mdd-wrap select:focus,#mdd-wrap input:focus,#mdd-wrap textarea:focus{border-color:var(--mdd-accent)!important}
+.mdd-select{min-width:200px}
+.mdd-field-inline{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.mdd-field-inline input[type="text"]{flex:1;min-width:180px}
+
+/* Color pickers */
+.mdd-color-row{display:flex;gap:24px;flex-wrap:wrap}
+.mdd-color-field{flex:1;min-width:200px}
+.mdd-color-field label{display:block;font-size:.75rem!important;font-weight:500!important;text-transform:uppercase;letter-spacing:.08em;color:var(--mdd-muted)!important;margin-bottom:6px}
+#mdd-wrap input[type="color"]{height:42px;width:100%;padding:3px 4px;border-radius:8px;border:1px solid var(--mdd-border)!important;background:#111!important;cursor:pointer}
+.wp-picker-container .wp-color-result{border-radius:8px!important;border:1px solid var(--mdd-border)!important;height:36px!important}
+
+/* ─── Logo Upload ─── */
+.mdd-logo-upload{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.mdd-logo-preview{width:160px;height:90px;border:2px dashed var(--mdd-border);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;overflow:hidden;background:#111}
+.mdd-logo-preview img{width:100%;height:100%;object-fit:contain;padding:6px;border:none!important;border-radius:0!important}
+.mdd-logo-preview .dashicons{font-size:28px;color:#444}
+.mdd-logo-preview span:not(.dashicons){font-size:10px;color:#555}
+
+/* ─── Toggle Switch (Mesa Pro style) ─── */
+.mdd-switch{position:relative;display:inline-block;width:44px;height:24px;vertical-align:middle;margin-left:12px;flex-shrink:0}
+.mdd-switch input{opacity:0;width:0;height:0}
+.mdd-slider{position:absolute;cursor:pointer;inset:0;background:#444;border-radius:34px;transition:.3s}
+.mdd-slider:before{content:"";position:absolute;height:18px;width:18px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.3s}
+.mdd-switch input:checked+.mdd-slider{background:var(--mdd-accent)}
+.mdd-switch input:checked+.mdd-slider:before{transform:translateX(20px)}
+
+/* ─── Buttons ─── */
+#mdd-wrap .button,#mdd-wrap .button-small{
+    background:#222!important;border:1px solid var(--mdd-border)!important;color:var(--mdd-text)!important;
+    border-radius:8px!important;font-family:'DM Sans',sans-serif!important;font-size:.85rem!important;
+    padding:6px 14px!important;transition:all .2s!important;box-shadow:none!important;
+}
+#mdd-wrap .button:hover{border-color:#444!important;background:#2a2a2a!important}
+#mdd-wrap .button-primary{
+    background:var(--mdd-accent)!important;border-color:var(--mdd-accent)!important;color:#fff!important;
+}
+#mdd-wrap .button-primary:hover{opacity:.85!important}
+#mdd-wrap .button-link-delete{color:var(--mdd-danger)!important;border-color:rgba(224,60,60,.3)!important;background:transparent!important}
+
+/* ─── Tables ─── */
+#mdd-wrap .wp-list-table{border-collapse:separate!important;border-spacing:0!important;border:1px solid var(--mdd-border)!important;border-radius:10px!important;overflow:hidden!important}
+#mdd-wrap .wp-list-table th{background:#111!important;color:var(--mdd-muted)!important;font-size:.75rem!important;font-weight:500!important;text-transform:uppercase;letter-spacing:.08em;padding:12px 16px!important;border-bottom:1px solid var(--mdd-border)!important}
+#mdd-wrap .wp-list-table td{background:var(--mdd-surface)!important;color:var(--mdd-text)!important;padding:12px 16px!important;border-bottom:1px solid rgba(255,255,255,.03)!important;font-size:.88rem!important}
+#mdd-wrap .wp-list-table tr:last-child td{border-bottom:none!important}
+#mdd-wrap .wp-list-table.striped>tbody>tr:nth-child(odd)>td{background:rgba(255,255,255,.01)!important}
+
+/* Token elements */
+.mdd-token-code{font-size:12px;background:#111!important;padding:2px 6px;border-radius:4px;color:var(--mdd-accent2)!important;border:1px solid var(--mdd-border)}
+.mdd-url-field{font-size:11px!important;min-width:200px;cursor:text}
+.mdd-badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.7rem;font-weight:700;letter-spacing:.5px}
+.mdd-badge-tv{background:rgba(59,130,246,.12);color:#60a5fa}
+.mdd-badge-tablet{background:rgba(34,197,94,.12);color:#4ade80}
+.mdd-status-active{color:var(--mdd-success)!important;font-weight:600}
+.mdd-status-revoked{color:var(--mdd-danger)!important;font-weight:600}
+
+/* ─── Stats Grid ─── */
+.mdd-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:24px}
+.mdd-stat-card{background:var(--mdd-surface);border:1px solid var(--mdd-border);border-radius:var(--mdd-radius);padding:22px 16px;text-align:center}
+.mdd-stat-number{display:block;font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--mdd-accent);line-height:1.2}
+.mdd-stat-label{display:block;font-size:.75rem;color:var(--mdd-muted);margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+
+/* ─── Quiz Preview ─── */
+.mdd-quiz-question{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.04)}
+.mdd-quiz-question:last-child{border-bottom:none}
+.mdd-quiz-question h3{margin:0 0 8px;font-size:.9rem;color:var(--mdd-text)!important}
+.mdd-quiz-options{display:flex;gap:8px;flex-wrap:wrap}
+.mdd-quiz-option{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;background:#111;border:1px solid var(--mdd-border);border-radius:20px;font-size:.78rem;color:var(--mdd-text)}
+.mdd-quiz-option small{color:var(--mdd-muted);margin-left:4px}
+
+/* ─── Event fields ─── */
+.mdd-event-fields{margin-top:16px;padding-top:16px;border-top:1px solid var(--mdd-border)}
+
+/* ─── QR Code admin ─── */
+.mdd-qr-sizes{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px}
+.mdd-qr-size-option{display:flex;align-items:center;gap:12px;padding:14px;background:#111;border:1px solid var(--mdd-border);border-radius:10px;flex:1;min-width:200px}
+.mdd-qr-size-option img{border-radius:6px;border:1px solid var(--mdd-border)}
+.mdd-qr-size-info{display:flex;flex-direction:column;gap:4px}
+.mdd-qr-size-info strong{font-size:.9rem;color:var(--mdd-text)}
+.mdd-qr-size-info span{font-size:.78rem;color:var(--mdd-muted)}
+.mdd-url-copy-box{display:flex;gap:8px;align-items:center;margin-top:8px}
+.mdd-print-preview{margin-top:16px;padding:24px;background:#111;border:1px solid var(--mdd-border);border-radius:10px;display:flex;justify-content:center}
+
+/* ─── Dashboard Setup ─── */
+.mdd-setup-steps{display:flex;flex-direction:column;gap:6px}
+.mdd-setup-step{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,.04);text-decoration:none!important;color:rgba(255,255,255,.7)!important;font-size:.85rem;transition:background .2s;border:1px solid rgba(255,255,255,.04)}
+.mdd-setup-step:hover{background:rgba(255,255,255,.07);color:#fff!important}
+.mdd-setup-step:focus{color:#fff!important;box-shadow:none!important;outline:none!important}
+.mdd-setup-step.done{opacity:.5}
+.mdd-setup-step.done .mdd-setup-check{background:var(--mdd-success);color:#fff}
+.mdd-setup-check{width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+
+/* ─── Dashboard Preview Links ─── */
+.mdd-preview-link{display:flex;align-items:center;gap:10px;padding:8px 0}
+.mdd-preview-link+.mdd-preview-link{border-top:1px solid rgba(255,255,255,.04)}
+.mdd-preview-icon{font-size:1.2rem;flex-shrink:0;width:32px;text-align:center}
+.mdd-preview-info{flex:1}
+.mdd-preview-info strong{display:block;font-size:.85rem;color:var(--mdd-text)}
+
+/* ─── Dashboard Quick Actions ─── */
+.mdd-quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mdd-quick-action{
+    display:flex;align-items:center;gap:8px;padding:10px 14px;
+    background:#111;border:1px solid var(--mdd-border);border-radius:10px;
+    text-decoration:none!important;color:var(--mdd-muted)!important;font-size:.82rem;font-weight:500;transition:all .2s;
+}
+.mdd-quick-action:hover{border-color:var(--mdd-accent);color:var(--mdd-accent)!important;background:rgba(249,115,22,.04)}
+.mdd-quick-action:focus{color:var(--mdd-accent)!important;box-shadow:none!important;outline:none!important}
+.mdd-quick-action .dashicons{font-size:16px;width:16px;height:16px;color:var(--mdd-accent)}
+
+/* ─── Token Advanced ─── */
+.mdd-token-advanced{margin-top:14px;padding-top:14px;border-top:1px solid var(--mdd-border)}
+.mdd-token-advanced summary{cursor:pointer;font-size:.82rem;color:var(--mdd-muted);user-select:none}
+.mdd-token-advanced summary:hover{color:var(--mdd-accent)}
+.mdd-token-advanced-fields{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;align-items:flex-end}
+
+/* ─── Notices ─── */
+#mdd-wrap .notice{background:var(--mdd-surface)!important;border-color:var(--mdd-accent)!important;color:var(--mdd-text)!important;border-radius:8px!important}
+#mdd-wrap .notice-success{border-color:var(--mdd-success)!important}
+#mdd-wrap .notice p{color:var(--mdd-text)!important}
+
+/* ─── Code ─── */
+#mdd-wrap code{background:#111;padding:2px 8px;border-radius:4px;font-size:.82rem;color:var(--mdd-accent2);border:1px solid var(--mdd-border)}
+
+/* ─── Global text overrides ─── */
+#mdd-wrap strong{color:var(--mdd-text)}
+#mdd-wrap p{color:var(--mdd-text)}
+#mdd-wrap a:not(.mdd-tab):not(.mdd-setup-step):not(.mdd-quick-action){color:var(--mdd-accent)!important;text-decoration:none}
+#mdd-wrap a:hover{color:var(--mdd-accent2)!important}
+#mdd-wrap input[type="checkbox"]{accent-color:var(--mdd-accent)}
+#mdd-wrap .form-table th{color:var(--mdd-text)!important;font-weight:600;font-size:.85rem}
+#mdd-wrap .form-table td{color:var(--mdd-text)!important}
+
+/* ─── Footer ─── */
+.mdd-admin-footer{margin-top:40px;text-align:center;font-size:.73rem;color:#444;border-top:1px solid var(--mdd-border);padding-top:22px}
+.mdd-admin-footer a{color:#666!important}
+.mdd-admin-footer a:hover{color:var(--mdd-accent)!important}
+
+/* ─── Spin animation ─── */
+@keyframes mdd-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.spin{animation:mdd-spin 1s linear infinite}
+
+/* ─── Tagger Table ─── */
+.mdd-tagger-table{width:100%;border-collapse:collapse}
+.mdd-tagger-table th{background:#111;color:var(--mdd-muted);font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;padding:12px 16px;text-align:left;border-bottom:1px solid var(--mdd-border)}
+.mdd-tagger-table td{padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.03);font-size:.85rem;color:var(--mdd-text);vertical-align:middle}
+.mdd-tagger-table tr:hover td{background:rgba(255,255,255,.02)}
+.mdd-tagger-table tr:last-child td{border-bottom:none}

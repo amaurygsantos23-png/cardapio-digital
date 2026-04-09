@@ -1,0 +1,34 @@
+.elementor-add-section-area-button.elementor-add-full-button {
+  background-image: url(../img/full-icon.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  margin-left: 5px;
+  background-size: contain;
+  box-shadow: 0 1px 3px #212121;
+}
+
+#full-elementor .dialog-widget-content .dialog-message {
+  padding: 0;
+}
+
+#full-elementor .dialog-buttons-wrapper.dialog-lightbox-buttons-wrapper {
+  display: none;
+}
+
+.full-templates-admin-body {
+  height: 100%;
+}
+
+.swal2-container.swal2-center.swal2-backdrop-show {
+  z-index: 9999999999999;
+}
+
+.mfp-wrap,
+.mfp-bg.mfp-ready {
+  z-index: 9699999;
+}
+
+#full-template-category-filter .hidden,
+#full-template-type-filter .hidden {
+  display: none;
+}
